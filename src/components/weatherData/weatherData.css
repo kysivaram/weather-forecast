@@ -1,0 +1,17 @@
+.weatherData{
+    margin-top: 20px;
+}
+
+.todaysDate {
+    color: grey;
+    font-size: 14px;
+}
+
+.todaysForecastRow {
+    height: 100px;
+    color: grey;
+}
+
+.todaysForecastTemperature {
+    font-size: 30px;
+}
