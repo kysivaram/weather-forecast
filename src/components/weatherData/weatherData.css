@@ -15,3 +15,7 @@
 .todaysForecastTemperature {
     font-size: 30px;
 }
+
+.forecast {
+    display: flex;
+}

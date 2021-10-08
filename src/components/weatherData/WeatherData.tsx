@@ -32,17 +32,16 @@ export function WeatherData(props: WeatherDataProps) {
         </Col>
 
       </Row>
-
-      <div>{weatherData.map(
-        data => (
-          <Row>
-            <Col>Date: {data.dt}</Col>
-            <Col>Temperature {data.main.temp}</Col>
-            <Col>Feels like {data.main.feels_like}</Col>
-            <Col>Pressure {data.main.pressure}</Col>
-            <Col>Humidity {data.main.humidity}</Col>
-          </Row>
-        )
+      <div className="forecast">{weatherData.map( (data: any, index: number) => {
+          if(index < 7) {
+            return (<Row>
+              {/* <span>{moment(data.main.dt).format('MMMM d, YYYY')}</span> */}
+              <span>{data.main.temp_min} C - {data.main.temp_max} C</span>
+              <span>{data.weather[0].description}</span>
+            </Row> );
+          }
+          return <span></span>;
+        }
       )}</div>
     </div>
     
