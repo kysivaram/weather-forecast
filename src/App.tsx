@@ -46,7 +46,7 @@ function App() {
               onChange={(e) => setCity(e.target.value)}
             />
           </Form.Group>
-          <Button variant="primary" onClick={getCityWeatherDetails}>
+          <Button variant="primary" onClick={() => getCityWeatherDetails()}>
             Search
           </Button>
           Unit Metric
@@ -55,9 +55,9 @@ function App() {
             id="unitSelection"
             name="unitSelection"
             aria-label="Metric"
-            value={unit}
+            value={"metric"}
+            checked={unit === "metric"}
             onChange={() => setUnit("metric")}
-            checked
           />
           Unit Other
           <input
@@ -65,8 +65,9 @@ function App() {
             id="unitSelection"
             name="unitSelection"
             aria-label="Other"
-            value={unit}
-            onChange={() => setUnit("")}
+            value={"imperial"}
+            checked={unit === "imperial"}
+            onChange={() => setUnit("imperial")}
           />
         </Form>
         <WeatherData
